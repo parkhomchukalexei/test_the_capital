@@ -120,7 +120,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-matrix_converter/matrix_converter/.env
 .venv
 env/
 venv/
