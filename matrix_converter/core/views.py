@@ -8,8 +8,16 @@ class MatrixController(APIView):
 
     def get(self, request):
 
-        data = [{'matrix_field': matrix} for matrix in [asyncio.run(get_matrix(SOURCE_URL)), TRAVERSAL, TRAVERSAL_2]]
+        url_matrix = [asyncio.run(get_matrix(SOURCE_URL))]
 
+        test_matrix = [TRAVERSAL]
+
+        one_more_test_matrix = [TRAVERSAL_2]
+        data = [
+            {'matrix_field': url_matrix},
+            {'matrix_field': test_matrix},
+            {'matrix_field': one_more_test_matrix},
+        ]
         serializer = MatrixSerializer(data=data, many=True)
 
         if serializer.is_valid():
