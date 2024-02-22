@@ -38,4 +38,3 @@ services:
     depends_on:
       - db
     restart: on-failure
-    restart_delay: 15s
